@@ -40,7 +40,12 @@ app.use(
         "https://www.paypal.com",
         "https://www.sandbox.paypal.com",
       ],
-      imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
+      imgSrc: [
+        "'self'",
+        "data:",
+        "https://res.cloudinary.com",
+        "https://www.paypalobjects.com",
+      ],
     },
   })
 );

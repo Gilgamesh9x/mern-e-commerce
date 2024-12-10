@@ -45,13 +45,19 @@ app.use(
   })
 );
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+const corsObj = isDevelopment
+  ? {
+      origin: "http://localhost:5173",
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    }
+  : {
+      origin: "https://mern-e-commerce-mrt2.onrender.com",
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
+    };
+
+app.use(cors(corsObj));
 app.use(express.json());
 app.use(cookieParser());
 

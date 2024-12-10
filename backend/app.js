@@ -26,6 +26,10 @@ import ordersRouter from "./routers/ordersRouter.js";
 const app = express();
 const isDevelopment = process.env.NODE_ENV === "development";
 
+const backendURL = isDevelopment
+  ? "http://localhost:8000"
+  : "https://mern-e-commerce-backend.onrender.com";
+
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
@@ -39,6 +43,7 @@ app.use(
         "'self'",
         "https://www.paypal.com",
         "https://www.sandbox.paypal.com",
+        backendURL,
       ],
       imgSrc: ["'self'", "data:", "https://res.cloudinary.com"],
     },

@@ -34,6 +34,12 @@ app.use(
         "'self'",
         "https://www.paypal.com",
         "https://www.sandbox.paypal.com",
+        "'unsafe-inline'",
+      ],
+      frameSrc: [
+        "'self'",
+        "https://www.paypal.com",
+        "https://www.sandbox.paypal.com",
       ],
       connectSrc: [
         "'self'",
